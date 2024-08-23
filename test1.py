@@ -1,5 +1,5 @@
 import pytest
-from main import count_vowels
+from main1 import count_vowels
 
 def test_only_vowels():
     assert count_vowels('аеёиоуыэюя') == 10
