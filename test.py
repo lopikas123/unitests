@@ -1,15 +1,16 @@
-import pytest
-from main import count_vowels
+import unittest
+from main import divide
 
-def test_only_vowels():
-    assert count_vowels('аеёиоуыэюя') == 10
-    assert count_vowels('АЕЁИОУЫЭЮЯ') == 10
+class TestDivide(unittest.TestCase):
+    def test_divide_success(self):
+            self.assertEqual(divide(10, 2), 5)
+            self.assertEqual(divide(10, 0), 0)
+            self.assertEqual(divide(70, 2), 35)
 
-def test_no_vowels():
-    assert count_vowels('бгд') == 0
-    assert count_vowels('БГД') == 0
+    def test_divide_by_zero(self):
+                self.assertRaises(TypeError, divide, 10, 0)
 
-def test_mixed_strings():
-    assert count_vowels('Привет, как дела?') == 5
-    assert count_vowels('ПРИВЕТ, КАК ДЕЛА?') == 5
-    assert count_vowels('Hello, world!') == 3
+
+
+if __name__ == '__main__':
+		unittest.main()
